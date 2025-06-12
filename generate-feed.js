@@ -18,11 +18,28 @@ const podcastInfo = {
   author: "Tom Dowling",
   email: "twist-in-time.lumpish175@passmail.net",
   language: "en-us",
+  explicit: "no",
+  category: "History",
 };
 
 function formatRssDate(dateStr) {
   const date = new Date(dateStr);
   return date.toUTCString();
+}
+
+function getFileSizeBytes(audioUrl) {
+  try {
+    const filePath = path.join(
+      __dirname,
+      "public",
+      decodeURIComponent(new URL(audioUrl).pathname)
+    );
+    const stats = fs.statSync(filePath);
+    return stats.size;
+  } catch (err) {
+    console.warn(`Warning: Unable to get file size for ${audioUrl}`);
+    return 0;
+  }
 }
 
 function generateRssFeed(episodes, podcastInfo) {
@@ -31,20 +48,16 @@ function generateRssFeed(episodes, podcastInfo) {
   rssFeed += `<channel>\n`;
   rssFeed += `<title>${podcastInfo.title}</title>\n`;
   rssFeed += `<link>${podcastInfo.link}</link>\n`;
-  rssFeed += `<atom:link href="${podcastInfo.link}/feed.xml" rel="self" type="application/rss+xml" />\n`;
+  rssFeed += `<atom:link href="${podcastInfo.link}/feed.xml" rel="self" type="application/rss+xml"/>\n`;
   rssFeed += `<description>${podcastInfo.description}</description>\n`;
+  rssFeed += `<itunes:summary>${podcastInfo.description}</itunes:summary>\n`;
   rssFeed += `<language>${podcastInfo.language}</language>\n`;
   rssFeed += `<managingEditor>${podcastInfo.email} (${podcastInfo.author})</managingEditor>\n`;
-  rssFeed += `<itunes:summary>${podcastInfo.description}</itunes:summary>\n`;
-  rssFeed += `<itunes:explicit>no</itunes:explicit>\n`;
-  rssFeed += `<itunes:category text="Fiction"/>\n`;
+  rssFeed += `<itunes:email>${podcastInfo.email}</itunes:email>\n`;
   rssFeed += `<itunes:author>${podcastInfo.author}</itunes:author>\n`;
-  rssFeed += `<itunes:email>${podcastInfo.email}</itunes:email>\n`; // Optional but fine to keep
-  rssFeed += `<itunes:owner>\n`;
-  rssFeed += `  <itunes:name>${podcastInfo.author}</itunes:name>\n`;
-  rssFeed += `  <itunes:email>${podcastInfo.email}</itunes:email>\n`;
-  rssFeed += `</itunes:owner>\n`;
   rssFeed += `<itunes:image href="${podcastInfo.image}"/>\n`;
+  rssFeed += `<itunes:explicit>${podcastInfo.explicit}</itunes:explicit>\n`;
+  rssFeed += `<itunes:category text="${podcastInfo.category}"/>\n`;
   rssFeed += `<image>\n`;
   rssFeed += `  <url>${podcastInfo.image}</url>\n`;
   rssFeed += `  <title>${podcastInfo.title}</title>\n`;
@@ -52,14 +65,16 @@ function generateRssFeed(episodes, podcastInfo) {
   rssFeed += `</image>\n`;
 
   episodes.forEach((ep) => {
+    const fileSize = getFileSizeBytes(ep.audioUrl);
+
     rssFeed += `<item>\n`;
-    rssFeed += `  <title>${ep.title}</title>\n`;
-    rssFeed += `  <description>${ep.description}</description>\n`;
-    rssFeed += `  <enclosure url="${ep.audioUrl}" length="0" type="audio/mpeg"/>\n`;
-    rssFeed += `  <guid>${ep.id}</guid>\n`;
-    rssFeed += `  <pubDate>${formatRssDate(ep.pubDate)}</pubDate>\n`;
-    rssFeed += `  <itunes:duration>${ep.duration}</itunes:duration>\n`;
-    rssFeed += `  <category>${ep.category}</category>\n`;
+    rssFeed += `<title>${ep.title}</title>\n`;
+    rssFeed += `<description>${ep.description}</description>\n`;
+    rssFeed += `<enclosure url="${ep.audioUrl}" length="${fileSize}" type="audio/mpeg"/>\n`;
+    rssFeed += `<guid>${ep.id}</guid>\n`;
+    rssFeed += `<pubDate>${formatRssDate(ep.pubDate)}</pubDate>\n`;
+    rssFeed += `<itunes:duration>${ep.duration}</itunes:duration>\n`;
+    rssFeed += `<category>${ep.category}</category>\n`;
     rssFeed += `</item>\n`;
   });
 
@@ -82,4 +97,4 @@ fs.writeFileSync(path.join(publicDir, "feed.xml"), rssXml, {
   encoding: "utf-8",
 });
 
-console.log("RSS feed generated successfully!");
+console.log("✅ RSS feed generated successfully!");
