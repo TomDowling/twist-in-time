@@ -27,31 +27,39 @@ function formatRssDate(dateStr) {
 
 function generateRssFeed(episodes, podcastInfo) {
   let rssFeed = `<?xml version="1.0" encoding="UTF-8"?>\n`;
-  rssFeed += `<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/">\n`;
+  rssFeed += `<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">\n`;
   rssFeed += `<channel>\n`;
   rssFeed += `<title>${podcastInfo.title}</title>\n`;
   rssFeed += `<link>${podcastInfo.link}</link>\n`;
+  rssFeed += `<atom:link href="${podcastInfo.link}/feed.xml" rel="self" type="application/rss+xml" />\n`;
   rssFeed += `<description>${podcastInfo.description}</description>\n`;
   rssFeed += `<language>${podcastInfo.language}</language>\n`;
   rssFeed += `<managingEditor>${podcastInfo.email} (${podcastInfo.author})</managingEditor>\n`;
-  rssFeed += `<itunes:email>${podcastInfo.email}</itunes:email>\n`;
+  rssFeed += `<itunes:summary>${podcastInfo.description}</itunes:summary>\n`;
+  rssFeed += `<itunes:explicit>no</itunes:explicit>\n`;
+  rssFeed += `<itunes:category text="Fiction"/>\n`;
   rssFeed += `<itunes:author>${podcastInfo.author}</itunes:author>\n`;
+  rssFeed += `<itunes:email>${podcastInfo.email}</itunes:email>\n`; // Optional but fine to keep
+  rssFeed += `<itunes:owner>\n`;
+  rssFeed += `  <itunes:name>${podcastInfo.author}</itunes:name>\n`;
+  rssFeed += `  <itunes:email>${podcastInfo.email}</itunes:email>\n`;
+  rssFeed += `</itunes:owner>\n`;
   rssFeed += `<itunes:image href="${podcastInfo.image}"/>\n`;
   rssFeed += `<image>\n`;
-  rssFeed += `<url>${podcastInfo.image}</url>\n`;
-  rssFeed += `<title>${podcastInfo.title}</title>\n`;
-  rssFeed += `<link>${podcastInfo.link}</link>\n`;
+  rssFeed += `  <url>${podcastInfo.image}</url>\n`;
+  rssFeed += `  <title>${podcastInfo.title}</title>\n`;
+  rssFeed += `  <link>${podcastInfo.link}</link>\n`;
   rssFeed += `</image>\n`;
 
   episodes.forEach((ep) => {
     rssFeed += `<item>\n`;
-    rssFeed += `<title>${ep.title}</title>\n`;
-    rssFeed += `<description>${ep.description}</description>\n`;
-    rssFeed += `<enclosure url="${ep.audioUrl}" length="0" type="audio/mpeg"/>\n`;
-    rssFeed += `<guid>${ep.id}</guid>\n`;
-    rssFeed += `<pubDate>${formatRssDate(ep.pubDate)}</pubDate>\n`;
-    rssFeed += `<itunes:duration>${ep.duration}</itunes:duration>\n`;
-    rssFeed += `<category>${ep.category}</category>\n`;
+    rssFeed += `  <title>${ep.title}</title>\n`;
+    rssFeed += `  <description>${ep.description}</description>\n`;
+    rssFeed += `  <enclosure url="${ep.audioUrl}" length="0" type="audio/mpeg"/>\n`;
+    rssFeed += `  <guid>${ep.id}</guid>\n`;
+    rssFeed += `  <pubDate>${formatRssDate(ep.pubDate)}</pubDate>\n`;
+    rssFeed += `  <itunes:duration>${ep.duration}</itunes:duration>\n`;
+    rssFeed += `  <category>${ep.category}</category>\n`;
     rssFeed += `</item>\n`;
   });
 
