@@ -28,3 +28,6 @@ next-env.d.ts
 
 # misc
 .DS_Store
+
+#Generated files
+public/feed.xml

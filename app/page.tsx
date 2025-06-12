@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url: "https://twist-in-time.digital-space.io/",
     images: [
       {
-        url: "/podcast-cover.jpg",
+        url: "logo-banner.png",
         width: 1200,
         height: 630,
         alt: "What If History Changed? Podcast Cover",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "What If History Changed? Podcast",
     description:
       "A podcast exploring alternate history scenarios—how tiny changes in the past could have reshaped our present.",
-    images: ["/podcast-cover.jpg"],
+    images: ["logo-banner.png"],
   },
 };
 
@@ -290,7 +290,7 @@ export default async function PodcastHomepage() {
                       </div> */}
                     </div>
                     <Image
-                      src="/podcast-cover.jpg"
+                      src="logo-banner.png"
                       width={400}
                       height={400}
                       alt={featuredEpisode?.title}

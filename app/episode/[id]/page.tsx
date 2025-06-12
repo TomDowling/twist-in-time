@@ -41,7 +41,7 @@ export async function generateMetadata({
         {
           url:
             episode.image ||
-            "https://twist-in-time.digital-space.io/podcast-cover.jpg",
+            "https://twist-in-time.digital-space.iologo-banner.png",
           width: 1200,
           height: 630,
           alt: episode.title,
@@ -54,7 +54,7 @@ export async function generateMetadata({
       description: episode.description,
       images: [
         episode.image ||
-          "https://twist-in-time.digital-space.io/podcast-cover.jpg",
+          "https://twist-in-time.digital-space.iologo-banner.png",
       ],
     },
   };
@@ -81,7 +81,7 @@ export default async function EpisodePage({ params }: EpisodePageProps) {
       <div className="grid gap-6">
         <div className="flex flex-col md:flex-row gap-6 items-start">
           <Image
-            src={episode.image || "/podcast-cover.jpg"}
+            src={episode.image || "logo-banner.png"}
             width={300}
             height={300}
             alt={episode.title}
