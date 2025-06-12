@@ -14,7 +14,7 @@ const podcastInfo = {
   description:
     "What if one small moment in history changed everything? Join us as we rewrite the past and explore the ripple effects on our world today.",
   link: "https://twist-in-time.digital-space.io",
-  image: "https://twist-in-time.digital-space.iologo-banner.png",
+  image: "https://twist-in-time.digital-space.io/logo-banner.png",
   author: "Tom Dowling",
   language: "en-us",
 };

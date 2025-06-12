@@ -41,7 +41,7 @@ export async function generateMetadata({
         {
           url:
             episode.image ||
-            "https://twist-in-time.digital-space.iologo-banner.png",
+            "https://twist-in-time.digital-space.io/logo-banner.png",
           width: 1200,
           height: 630,
           alt: episode.title,
@@ -54,7 +54,7 @@ export async function generateMetadata({
       description: episode.description,
       images: [
         episode.image ||
-          "https://twist-in-time.digital-space.iologo-banner.png",
+          "https://twist-in-time.digital-space.io/logo-banner.png",
       ],
     },
   };

@@ -55,7 +55,7 @@ export default function RootLayout({
                 "@type": "Person",
                 name: "Tom Dowling",
               },
-              image: "https://twist-in-time.digital-space.iologo-banner.png",
+              image: "https://twist-in-time.digital-space.io/logo-banner.png",
               webFeed: "https://twist-in-time.digital-space.io/feed.xml",
               publisher: {
                 "@type": "Organization",
