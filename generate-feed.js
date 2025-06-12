@@ -16,6 +16,7 @@ const podcastInfo = {
   link: "https://twist-in-time.digital-space.io",
   image: "https://twist-in-time.digital-space.io/logo-banner.png",
   author: "Tom Dowling",
+  email: "twist-in-time.lumpish175@passmail.net",
   language: "en-us",
 };
 
