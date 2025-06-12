@@ -44,7 +44,7 @@ function getFileSizeBytes(audioUrl) {
 
 function generateRssFeed(episodes, podcastInfo) {
   let rssFeed = `<?xml version="1.0" encoding="UTF-8"?>\n`;
-  rssFeed += `<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">\n`;
+  rssFeed += `<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:podcast="https://podcastindex.org/namespace/1.0">\n`;
   rssFeed += `<channel>\n`;
   rssFeed += `<title>${podcastInfo.title}</title>\n`;
   rssFeed += `<link>${podcastInfo.link}</link>\n`;
