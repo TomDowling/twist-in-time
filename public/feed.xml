@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+<title>Twist In Time</title>
+<link>https://twist-in-time.digital-space.io</link>
+<description>What if one small moment in history changed everything? Join us as we rewrite the past and explore the ripple effects on our world today.</description>
+<language>en-us</language>
+<itunes:author>Tom Dowling</itunes:author>
+<itunes:image href="https://twist-in-time.digital-space.io/podcast-cover.jpg"/>
+<image>
+<url>https://twist-in-time.digital-space.io/podcast-cover.jpg</url>
+<title>Twist In Time</title>
+<link>https://twist-in-time.digital-space.io</link>
+</image>
+<item>
+<title>What if the Library of Alexandria Survived?</title>
+<description>We explores a world where the Library of Alexandria wasn't destroyed. How would science, technology, and culture have evolved?</description>
+<enclosure url="https://twist-in-time.digital-space.io/episodes/ep001.mp3" length="0" type="audio/mpeg"/>
+<guid>ep-001</guid>
+<pubDate>Sun, 08 Jun 2025 09:00:00 GMT</pubDate>
+<itunes:duration>08:32</itunes:duration>
+<category>Ancient History</category>
+</item>
+</channel>
+</rss>

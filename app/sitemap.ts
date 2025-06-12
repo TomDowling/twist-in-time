@@ -1,27 +1,23 @@
-import type { MetadataRoute } from "next"
-import { fetchPodcastFeed } from "@/lib/fetch-podcast"
+import episodes from "@/lib/episodes.json";
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://mindfultechpodcast.com"
-
-  // Get podcast data
-  const podcastData = await fetchPodcastFeed()
+export default async function sitemap() {
+  const baseUrl = "https://twist-in-time.digital-space.io";
 
   // Create episode URLs
-  const episodeUrls = podcastData.episodes.map((episode) => ({
+  const episodeUrls = episodes.map((episode) => ({
     url: `${baseUrl}/episode/${episode.id}`,
     lastModified: new Date(episode.pubDate),
-    changeFrequency: "monthly" as const,
+    changeFrequency: "monthly",
     priority: 0.8,
-  }))
+  }));
 
   // Static routes
-  const routes = ["", "/about", "/episodes", "/contact"].map((route) => ({
+  const routes = [""].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: "weekly" as const,
+    changeFrequency: "weekly",
     priority: 1.0,
-  }))
+  }));
 
-  return [...routes, ...episodeUrls]
+  return [...routes, ...episodeUrls];
 }

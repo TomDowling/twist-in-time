@@ -1,34 +1,34 @@
-import Link from "next/link"
-import Image from "next/image"
+import Link from "next/link";
+import Image from "next/image";
 
 export function SubscribeButtons() {
   const platforms = [
     {
-      name: "Apple Podcasts",
-      url: "#",
-      icon: "/placeholder.svg?height=40&width=40",
-    },
-    {
-      name: "Spotify",
-      url: "#",
-      icon: "/placeholder.svg?height=40&width=40",
-    },
-    {
-      name: "Google Podcasts",
-      url: "#",
-      icon: "/placeholder.svg?height=40&width=40",
-    },
-    {
-      name: "Overcast",
-      url: "#",
-      icon: "/placeholder.svg?height=40&width=40",
-    },
-    {
       name: "RSS Feed",
+      url: "/feed.xml",
+      icon: "/placeholder.svg?height=40&width=40",
+    },
+    {
+      name: "Apple Podcasts (soon)",
       url: "#",
       icon: "/placeholder.svg?height=40&width=40",
     },
-  ]
+    {
+      name: "Spotify (soon)",
+      url: "#",
+      icon: "/placeholder.svg?height=40&width=40",
+    },
+    {
+      name: "Google Podcasts (soon)",
+      url: "#",
+      icon: "/placeholder.svg?height=40&width=40",
+    },
+    {
+      name: "Overcast (soon)",
+      url: "#",
+      icon: "/placeholder.svg?height=40&width=40",
+    },
+  ];
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-5 gap-4 w-full max-w-3xl mt-6">
@@ -49,5 +49,5 @@ export function SubscribeButtons() {
         </Link>
       ))}
     </div>
-  )
+  );
 }

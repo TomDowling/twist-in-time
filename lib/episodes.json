@@ -1,0 +1,82 @@
+[
+  {
+    "id": "ep-001",
+    "title": "What if the Library of Alexandria Survived?",
+    "description": "We explores a world where the Library of Alexandria wasn't destroyed. How would science, technology, and culture have evolved?",
+    "pubDate": "2025-06-08T09:00:00Z",
+    "audioUrl": "https://twist-in-time.digital-space.io/episodes/ep001.mp3",
+    "duration": "08:32",
+    "category": "Ancient History",
+    "image": "https://twist-in-time.digital-space.io/logo-banner.png"
+  },
+  {
+    "id": "ep-002",
+    "title": "The Roman Empire Never Fell",
+    "description": "Imagine a world where the Roman Empire never fell. What would modern Europe look like?",
+    "pubDate": "2026-01-01T00:00:00Z",
+    "audioUrl": "https://twist-in-time.digital-space.io/episodes/ep002.mp3",
+    "duration": "09:45",
+    "category": "Alternate History",
+    "image": "https://twist-in-time.digital-space.io/logo-banner.png"
+  },
+  {
+    "id": "ep-003",
+    "title": "The Age of Steam in the Middle Ages",
+    "description": "What if steam power was discovered in the Middle Ages? How would this change the course of history?",
+    "pubDate": "2026-01-01T00:00:00Z",
+    "audioUrl": "https://twist-in-time.digital-space.io/episodes/ep003.mp3",
+    "duration": "10:20",
+    "category": "Technological History",
+    "image": "https://twist-in-time.digital-space.io/logo-banner.png"
+  },
+  {
+    "id": "ep-004",
+    "title": "The Vikings Discover America",
+    "description": "What if the Vikings had established a permanent settlement in North America? How would this affect indigenous cultures and European exploration?",
+    "pubDate": "2026-01-01T00:00:00Z",
+    "audioUrl": "https://twist-in-time.digital-space.io/episodes/ep004.mp3",
+    "duration": "11:15",
+    "category": "Exploration History",
+    "image": "https://twist-in-time.digital-space.io/logo-banner.png"
+  },
+  {
+    "id": "ep-005",
+    "title": "The Renaissance in Asia",
+    "description": "What if the Renaissance had started in Asia instead of Europe? How would this change global culture and science?",
+    "pubDate": "2026-01-01T00:00:00Z",
+    "audioUrl": "https://twist-in-time.digital-space.io/episodes/ep005.mp3",
+    "duration": "12:05",
+    "category": "Cultural History",
+    "image": "https://twist-in-time.digital-space.io/logo-banner.png"
+  },
+  {
+    "id": "ep-006",
+    "title": "The Internet in the 19th Century",
+    "description": "What if the internet was invented in the 19th century? How would this change communication and society?",
+    "pubDate": "2026-01-01T00:00:00Z",
+    "audioUrl": "https://twist-in-time.digital-space.io/episodes/ep007.mp3",
+    "duration": "14:45",
+    "category": "Technological History",
+    "image": "https://twist-in-time.digital-space.io/logo-banner.png"
+  },
+  {
+    "id": "ep-007",
+    "title": "The Future of Time Travel",
+    "description": "Exploring the possibilities and implications of time travel in our future.",
+    "pubDate": "2026-01-01T00:00:00Z",
+    "audioUrl": "https://twist-in-time.digital-space.io/episodes/ep008.mp3",
+    "duration": "15:50",
+    "category": "Science Fiction",
+    "image": "https://twist-in-time.digital-space.io/logo-banner.png"
+  },
+  {
+    "id": "ep-008",
+    "title": "The Rise of AI in History",
+    "description": "How would history have been different if artificial intelligence had been developed in the past?",
+    "pubDate": "2026-01-01T00:00:00Z",
+    "audioUrl": "https://twist-in-time.digital-space.io/episodes/ep009.mp3",
+    "duration": "16:30",
+    "category": "Technological History",
+    "image": "https://twist-in-time.digital-space.io/logo-banner.png"
+  }
+]
