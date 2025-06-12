@@ -33,6 +33,8 @@ function generateRssFeed(episodes, podcastInfo) {
   rssFeed += `<link>${podcastInfo.link}</link>\n`;
   rssFeed += `<description>${podcastInfo.description}</description>\n`;
   rssFeed += `<language>${podcastInfo.language}</language>\n`;
+  rssFeed += `<managingEditor>${podcastInfo.email} (${podcastInfo.author})</managingEditor>\n`;
+  rssFeed += `<itunes:email>${podcastInfo.email}</itunes:email>\n`;
   rssFeed += `<itunes:author>${podcastInfo.author}</itunes:author>\n`;
   rssFeed += `<itunes:image href="${podcastInfo.image}"/>\n`;
   rssFeed += `<image>\n`;
