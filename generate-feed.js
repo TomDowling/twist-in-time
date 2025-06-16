@@ -18,7 +18,7 @@ const podcastInfo = {
   author: "Tom Dowling",
   email: "twist-in-time@digital-space.io",
   language: "en-us",
-  explicit: "no",
+  explicit: false,
   category: "History",
 };
 
